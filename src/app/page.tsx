@@ -12,6 +12,7 @@ export default function HomePage() {
   const site = getSiteConfig();
   const featured = getFeaturedVehicles();
   const heroVehicle = featured[0];
+  const primary = site.phones[0];
 
   return (
     <>
@@ -24,7 +25,7 @@ export default function HomePage() {
               In stock
             </h2>
             <p className="mt-2 text-secondary">
-              Current vehicles available at Elegant Motors.
+              Current vehicles available at {site.byline}.
             </p>
           </div>
           <ButtonLink href="/inventory" variant="outline" className="!border-secondary !text-foreground hover:!bg-muted self-start">
@@ -53,20 +54,30 @@ export default function HomePage() {
               Message us on WhatsApp or call — we&apos;ll confirm availability
               and arrange a visit.
             </p>
+            <p className="mt-4 text-sm text-accent/70">
+              {site.phones.map((p) => p.display).join(" · ")}
+            </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <ButtonLink
               href={whatsappHref(
-                site.whatsapp,
+                primary.whatsapp,
                 "Hi Elegant Motors — I'd like to schedule a viewing.",
               )}
               external
             >
               WhatsApp
             </ButtonLink>
-            <ButtonLink href={telHref(site.phone)} variant="outline" external>
-              Call {site.phoneDisplay}
-            </ButtonLink>
+            {site.phones.map((entry) => (
+              <ButtonLink
+                key={entry.phone}
+                href={telHref(entry.phone)}
+                variant="outline"
+                external
+              >
+                Call {entry.display}
+              </ButtonLink>
+            ))}
           </div>
         </div>
       </section>

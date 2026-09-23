@@ -1,11 +1,16 @@
+export type SitePhone = {
+  phone: string;
+  display: string;
+  whatsapp: string;
+};
+
 export type SiteConfig = {
   name: string;
+  byline: string;
   tagline: string;
   instagramUrl: string;
   instagramHandle: string;
-  phone: string;
-  phoneDisplay: string;
-  whatsapp: string;
+  phones: SitePhone[];
   location: string;
   logo: string;
 };

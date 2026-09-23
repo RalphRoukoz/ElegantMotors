@@ -36,6 +36,7 @@ export default async function VehicleDetailPage({ params }: Props) {
   if (!vehicle || vehicle.status !== "available") notFound();
 
   const site = getSiteConfig();
+  const primary = site.phones[0];
   const images = vehicle.images.map((image) => ({
     src: getVehicleImagePath(vehicle, image),
     alt: vehicle.title,
@@ -93,20 +94,23 @@ export default async function VehicleDetailPage({ params }: Props) {
 
           <div className="mt-10 flex flex-wrap gap-3">
             <ButtonLink
-              href={whatsappHref(site.whatsapp, waMessage)}
+              href={whatsappHref(primary.whatsapp, waMessage)}
               external
               className="!bg-primary !text-accent hover:!bg-secondary"
             >
               WhatsApp about this car
             </ButtonLink>
-            <ButtonLink
-              href={telHref(site.phone)}
-              variant="outline"
-              external
-              className="!border-secondary !text-foreground hover:!bg-muted"
-            >
-              Call {site.phoneDisplay}
-            </ButtonLink>
+            {site.phones.map((entry) => (
+              <ButtonLink
+                key={entry.phone}
+                href={telHref(entry.phone)}
+                variant="outline"
+                external
+                className="!border-secondary !text-foreground hover:!bg-muted"
+              >
+                Call {entry.display}
+              </ButtonLink>
+            ))}
           </div>
 
           {vehicle.instagramUrl ? (

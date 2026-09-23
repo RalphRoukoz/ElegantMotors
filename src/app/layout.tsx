@@ -15,12 +15,12 @@ const site = getSiteConfig();
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} | Available inventory`,
+    default: `${site.byline} | Available inventory`,
     template: `%s | ${site.name}`,
   },
-  description: site.tagline,
+  description: `${site.byline}. ${site.tagline}`,
   openGraph: {
-    title: site.name,
+    title: site.byline,
     description: site.tagline,
     images: [site.logo],
   },

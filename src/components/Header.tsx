@@ -5,17 +5,19 @@ import { telHref, whatsappHref } from "@/lib/vehicles";
 import { ButtonLink } from "./ButtonLink";
 
 export function Header({ site }: { site: SiteConfig }) {
+  const primary = site.phones[0];
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-primary/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
           className="relative block h-9 w-[140px] shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-          aria-label="Elegant Motors home"
+          aria-label={`${site.byline} home`}
         >
           <Image
             src={site.logo}
-            alt="Elegant Motors"
+            alt={site.byline}
             fill
             className="object-contain object-left"
             priority
@@ -37,7 +39,10 @@ export function Header({ site }: { site: SiteConfig }) {
             Contact
           </Link>
           <ButtonLink
-            href={whatsappHref(site.whatsapp, "Hi Elegant Motors — I'm interested in your inventory.")}
+            href={whatsappHref(
+              primary.whatsapp,
+              "Hi Elegant Motors — I'm interested in your inventory.",
+            )}
             variant="solid"
             external
             className="ml-1 !min-h-10 !px-3 !text-xs sm:!px-4 sm:!text-sm"
@@ -46,11 +51,11 @@ export function Header({ site }: { site: SiteConfig }) {
             WhatsApp
           </ButtonLink>
           <ButtonLink
-            href={telHref(site.phone)}
+            href={telHref(primary.phone)}
             variant="outline"
             external
             className="hidden !min-h-10 !px-3 !text-xs sm:inline-flex sm:!text-sm"
-            aria-label={`Call ${site.phoneDisplay}`}
+            aria-label={`Call ${primary.display}`}
           >
             Call
           </ButtonLink>
