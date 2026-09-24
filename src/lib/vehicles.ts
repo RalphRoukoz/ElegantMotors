@@ -32,6 +32,12 @@ export function getAvailableVehicles(): Vehicle[] {
   return getAllVehicles().filter((v) => v.status === "available");
 }
 
+export function getElectricVehicles(): Vehicle[] {
+  return getAvailableVehicles().filter(
+    (v) => v.fuel?.toLowerCase() === "electric",
+  );
+}
+
 export function getFeaturedVehicles(): Vehicle[] {
   const featured = getAvailableVehicles().filter((v) => v.featured);
   return featured.length > 0 ? featured : getAvailableVehicles().slice(0, 4);

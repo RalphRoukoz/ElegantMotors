@@ -7,10 +7,12 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { Reveal } from "@/components/Reveal";
 import {
   getAvailableVehicles,
+  getElectricVehicles,
   getSiteConfig,
   telHref,
   whatsappHref,
 } from "@/lib/vehicles";
+import { ElectricSection } from "@/components/ElectricSection";
 
 function publicAsset(rel: string): string | undefined {
   const full = path.join(process.cwd(), "public", rel.replace(/^\//, ""));
@@ -20,6 +22,7 @@ function publicAsset(rel: string): string | undefined {
 export default function HomePage() {
   const site = getSiteConfig();
   const vehicles = getAvailableVehicles();
+  const electricVehicles = getElectricVehicles();
   const featured = vehicles.slice(0, 6);
   const heroVehicle = featured[0];
   const primary = site.phones[0];
@@ -72,6 +75,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ElectricSection vehicles={electricVehicles} />
 
       <OwnerSection site={site} portraitSrc={portrait} />
 

@@ -8,8 +8,14 @@ export const metadata: Metadata = {
   description: "Browse available vehicles at Elegant Motors.",
 };
 
-export default function InventoryPage() {
+type Props = {
+  searchParams: Promise<{ fuel?: string }>;
+};
+
+export default async function InventoryPage({ searchParams }: Props) {
   const vehicles = getAvailableVehicles();
+  const params = await searchParams;
+  const initialFuel = params.fuel?.trim() || "all";
 
   return (
     <div className="mx-auto max-w-7xl px-4 pb-24 pt-28 sm:px-6">
@@ -26,7 +32,11 @@ export default function InventoryPage() {
           </p>
         </header>
       </Reveal>
-      <InventoryGrid vehicles={vehicles} featuredFirst />
+      <InventoryGrid
+        vehicles={vehicles}
+        featuredFirst
+        initialFuel={initialFuel}
+      />
     </div>
   );
 }

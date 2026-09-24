@@ -7,13 +7,16 @@ import { VehicleCard } from "./VehicleCard";
 export function InventoryGrid({
   vehicles,
   featuredFirst = false,
+  initialFuel = "all",
 }: {
   vehicles: Vehicle[];
   featuredFirst?: boolean;
+  initialFuel?: string;
 }) {
   const [query, setQuery] = useState("");
   const [make, setMake] = useState("all");
   const [bodyType, setBodyType] = useState("all");
+  const [fuel, setFuel] = useState(initialFuel);
 
   const makes = useMemo(
     () => Array.from(new Set(vehicles.map((v) => v.make))).sort(),
@@ -23,6 +26,13 @@ export function InventoryGrid({
     () =>
       Array.from(
         new Set(vehicles.map((v) => v.bodyType).filter(Boolean) as string[]),
+      ).sort(),
+    [vehicles],
+  );
+  const fuels = useMemo(
+    () =>
+      Array.from(
+        new Set(vehicles.map((v) => v.fuel).filter(Boolean) as string[]),
       ).sort(),
     [vehicles],
   );
@@ -36,14 +46,21 @@ export function InventoryGrid({
       v.model.toLowerCase().includes(q);
     const matchesMake = make === "all" || v.make === make;
     const matchesBody = bodyType === "all" || v.bodyType === bodyType;
-    return matchesQuery && matchesMake && matchesBody;
+    const matchesFuel =
+      fuel === "all" ||
+      (v.fuel ?? "").toLowerCase() === fuel.toLowerCase();
+    return matchesQuery && matchesMake && matchesBody && matchesFuel;
   });
 
-  const chipClass = (active: boolean) =>
+  const chipClass = (active: boolean, accent = false) =>
     `min-h-10 cursor-pointer whitespace-nowrap border px-4 text-xs uppercase tracking-[0.16em] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
       active
-        ? "border-accent bg-accent text-on-accent"
-        : "border-border bg-transparent text-zinc-400 hover:border-zinc-500 hover:text-white"
+        ? accent
+          ? "border-sky-300 bg-sky-300 text-on-accent"
+          : "border-accent bg-accent text-on-accent"
+        : accent
+          ? "border-sky-300/35 bg-transparent text-sky-200/80 hover:border-sky-300/70 hover:text-sky-100"
+          : "border-border bg-transparent text-zinc-400 hover:border-zinc-500 hover:text-white"
     }`;
 
   return (
@@ -59,6 +76,28 @@ export function InventoryGrid({
             className="min-h-12 w-full border-b border-border bg-transparent px-1 text-base text-foreground outline-none transition placeholder:text-zinc-600 focus:border-accent"
           />
         </label>
+
+        {fuels.length > 0 ? (
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              className={chipClass(fuel === "all")}
+              onClick={() => setFuel("all")}
+            >
+              All powertrains
+            </button>
+            {fuels.map((f) => (
+              <button
+                key={f}
+                type="button"
+                className={chipClass(fuel.toLowerCase() === f.toLowerCase(), f === "Electric")}
+                onClick={() => setFuel(f)}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+        ) : null}
 
         <div className="flex flex-wrap gap-2">
           <button
