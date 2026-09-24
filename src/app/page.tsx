@@ -1,7 +1,7 @@
 import { existsSync } from "fs";
 import path from "path";
 import { ScrollHero } from "@/components/ScrollHero";
-import { OwnerSection } from "@/components/OwnerSection";
+import { FoundersSection } from "@/components/FoundersSection";
 import { VehicleCard } from "@/components/VehicleCard";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Reveal } from "@/components/Reveal";
@@ -25,6 +25,7 @@ export default function HomePage() {
   const primary = site.phones[0];
   const showroomBg = publicAsset("/brand/showroom-hero.jpg");
   const portrait = "/brand/dany-roukoz.jpg";
+  const foundersPhoto = publicAsset("/brand/dany-georges-roukoz.jpg");
 
   return (
     <>
@@ -73,7 +74,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <OwnerSection site={site} portraitSrc={portrait} />
+      <FoundersSection
+        site={site}
+        foundersSrc={foundersPhoto}
+        portraitSrc={portrait}
+      />
 
       <section className="relative bg-primary px-4 py-24 sm:px-6 sm:py-28">
         <div className="chrome-line absolute inset-x-0 top-0" aria-hidden />
