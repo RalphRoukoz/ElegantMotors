@@ -29,13 +29,23 @@ export function InventoryGrid({
       ).sort(),
     [vehicles],
   );
-  const fuels = useMemo(
-    () =>
-      Array.from(
-        new Set(vehicles.map((v) => v.fuel).filter(Boolean) as string[]),
-      ).sort(),
-    [vehicles],
-  );
+  const fuels = useMemo(() => {
+    const set = new Set<string>();
+    for (const v of vehicles) {
+      if (!v.fuel) continue;
+      const f = v.fuel.toLowerCase();
+      if (f.includes("hybrid")) set.add("Hybrid");
+      else if (f === "electric") set.add("Electric");
+      else set.add(v.fuel);
+    }
+    const order = ["Electric", "Hybrid", "Petrol", "Diesel"];
+    return Array.from(set).sort(
+      (a, b) =>
+        (order.indexOf(a) === -1 ? 99 : order.indexOf(a)) -
+          (order.indexOf(b) === -1 ? 99 : order.indexOf(b)) ||
+        a.localeCompare(b),
+    );
+  }, [vehicles]);
 
   const filtered = vehicles.filter((v) => {
     const q = query.trim().toLowerCase();
@@ -46,21 +56,32 @@ export function InventoryGrid({
       v.model.toLowerCase().includes(q);
     const matchesMake = make === "all" || v.make === make;
     const matchesBody = bodyType === "all" || v.bodyType === bodyType;
+    const vehicleFuel = (v.fuel ?? "").toLowerCase();
+    const selectedFuel = fuel.toLowerCase();
     const matchesFuel =
       fuel === "all" ||
-      (v.fuel ?? "").toLowerCase() === fuel.toLowerCase();
+      (selectedFuel === "hybrid"
+        ? vehicleFuel.includes("hybrid")
+        : vehicleFuel === selectedFuel);
     return matchesQuery && matchesMake && matchesBody && matchesFuel;
   });
 
-  const chipClass = (active: boolean, accent = false) =>
+  const chipAccent = (f: string) =>
+    f === "Electric" ? "electric" : f === "Hybrid" ? "hybrid" : false;
+
+  const chipClass = (active: boolean, accent: false | "electric" | "hybrid" = false) =>
     `min-h-10 cursor-pointer whitespace-nowrap border px-4 text-xs uppercase tracking-[0.16em] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
       active
-        ? accent
+        ? accent === "electric"
           ? "border-sky-300 bg-sky-300 text-on-accent"
-          : "border-accent bg-accent text-on-accent"
-        : accent
+          : accent === "hybrid"
+            ? "border-lime-300 bg-lime-300 text-on-accent"
+            : "border-accent bg-accent text-on-accent"
+        : accent === "electric"
           ? "border-sky-300/35 bg-transparent text-sky-200/80 hover:border-sky-300/70 hover:text-sky-100"
-          : "border-border bg-transparent text-zinc-400 hover:border-zinc-500 hover:text-white"
+          : accent === "hybrid"
+            ? "border-lime-300/35 bg-transparent text-lime-200/80 hover:border-lime-300/70 hover:text-lime-100"
+            : "border-border bg-transparent text-zinc-400 hover:border-zinc-500 hover:text-white"
     }`;
 
   return (
@@ -90,7 +111,10 @@ export function InventoryGrid({
               <button
                 key={f}
                 type="button"
-                className={chipClass(fuel.toLowerCase() === f.toLowerCase(), f === "Electric")}
+                className={chipClass(
+                  fuel.toLowerCase() === f.toLowerCase(),
+                  chipAccent(f),
+                )}
                 onClick={() => setFuel(f)}
               >
                 {f}

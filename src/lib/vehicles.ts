@@ -38,6 +38,12 @@ export function getElectricVehicles(): Vehicle[] {
   );
 }
 
+export function getHybridVehicles(): Vehicle[] {
+  return getAvailableVehicles().filter((v) =>
+    (v.fuel ?? "").toLowerCase().includes("hybrid"),
+  );
+}
+
 export function getFeaturedVehicles(): Vehicle[] {
   const featured = getAvailableVehicles().filter((v) => v.featured);
   return featured.length > 0 ? featured : getAvailableVehicles().slice(0, 4);

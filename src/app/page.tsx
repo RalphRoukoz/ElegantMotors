@@ -8,11 +8,13 @@ import { Reveal } from "@/components/Reveal";
 import {
   getAvailableVehicles,
   getElectricVehicles,
+  getHybridVehicles,
   getSiteConfig,
   telHref,
   whatsappHref,
 } from "@/lib/vehicles";
 import { ElectricSection } from "@/components/ElectricSection";
+import { HybridSection } from "@/components/HybridSection";
 
 function publicAsset(rel: string): string | undefined {
   const full = path.join(process.cwd(), "public", rel.replace(/^\//, ""));
@@ -23,6 +25,7 @@ export default function HomePage() {
   const site = getSiteConfig();
   const vehicles = getAvailableVehicles();
   const electricVehicles = getElectricVehicles();
+  const hybridVehicles = getHybridVehicles();
   const featured = vehicles.slice(0, 6);
   const heroVehicle = featured[0];
   const primary = site.phones[0];
@@ -77,6 +80,8 @@ export default function HomePage() {
       </section>
 
       <ElectricSection vehicles={electricVehicles} />
+
+      <HybridSection vehicles={hybridVehicles} />
 
       <OwnerSection site={site} portraitSrc={portrait} />
 

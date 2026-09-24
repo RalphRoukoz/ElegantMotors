@@ -17,6 +17,10 @@ export function VehicleCard({
   const cover = vehicle.images[0];
   const mileage = formatMileage(vehicle);
   const meta = [vehicle.year, vehicle.bodyType, mileage].filter(Boolean).join(" · ");
+  const fuelLabel = (vehicle.fuel ?? "").toLowerCase();
+  const isElectric = fuelLabel === "electric";
+  const isHybrid = fuelLabel.includes("hybrid");
+  const photoCount = vehicle.images.length;
 
   return (
     <Link
@@ -46,6 +50,25 @@ export function VehicleCard({
               }
             />
           ) : null}
+          {(isElectric || isHybrid || photoCount > 1) && (
+            <div className="absolute left-3 top-3 z-10 flex flex-wrap gap-1.5">
+              {isElectric ? (
+                <span className="border border-sky-300/50 bg-black/55 px-2 py-1 text-[9px] uppercase tracking-[0.18em] text-sky-200 backdrop-blur-sm">
+                  Electric
+                </span>
+              ) : null}
+              {isHybrid ? (
+                <span className="border border-lime-300/50 bg-black/55 px-2 py-1 text-[9px] uppercase tracking-[0.18em] text-lime-200 backdrop-blur-sm">
+                  Hybrid
+                </span>
+              ) : null}
+              {photoCount > 1 ? (
+                <span className="border border-white/20 bg-black/55 px-2 py-1 text-[9px] uppercase tracking-[0.18em] text-zinc-200 backdrop-blur-sm">
+                  {photoCount} photos
+                </span>
+              ) : null}
+            </div>
+          )}
         </div>
         <div className="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6">
           <p className="text-[10px] uppercase tracking-[0.28em] text-zinc-300/90">
