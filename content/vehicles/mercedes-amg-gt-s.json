@@ -1,0 +1,23 @@
+{
+  "slug": "mercedes-amg-gt-s",
+  "title": "Mercedes-AMG GT S",
+  "make": "Mercedes-Benz",
+  "model": "AMG GT S",
+  "year": 2020,
+  "price": null,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "Coupe",
+  "transmission": "Automatic",
+  "fuel": "Petrol",
+  "color": null,
+  "status": "available",
+  "description": "Mercedes-AMG GT S — company source, one owner. Hand-crafted 4.0L V8 biturbo, AMG Performance Exhaust, AMG carbon fiber interior & steering wheel, bucket seats with race-ready grip, AMG Dynamic Select driving modes. Contact for year confirmation, mileage, and price.",
+  "instagramUrl": "https://www.instagram.com/p/DUGsyPkCDrb/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": true,
+  "updatedAt": "2026-09-24",
+  "sortOrder": 3
+}
