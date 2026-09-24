@@ -24,9 +24,7 @@ export default function HomePage() {
   const heroVehicle = featured[0];
   const primary = site.phones[0];
   const showroomBg = publicAsset("/brand/showroom-hero.jpg");
-  const portrait =
-    publicAsset("/brand/dany-roukoz-editorial.jpg") ||
-    "/brand/dany-roukoz.jpg";
+  const portrait = "/brand/dany-roukoz.jpg";
 
   return (
     <>

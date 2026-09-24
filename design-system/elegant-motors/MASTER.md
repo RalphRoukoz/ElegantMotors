@@ -2,7 +2,7 @@
 
 ## Brand
 - Logo: chrome/silver car silhouette + ELEGANT MOTORS on black (`/brand/logo.png`)
-- Owner: Dany Roukoz — portrait `/brand/dany-roukoz-editorial.jpg` (Higgsfield Soul 2 from reference)
+- Owner: Dany Roukoz — original portrait `/brand/dany-roukoz.jpg` (unedited)
 - Atmosphere: `/brand/showroom-hero.jpg` (Higgsfield Soul Location)
 
 ## Visual direction
