@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useRef } from "react";
 import type { SiteConfig, Vehicle } from "@/lib/types";
-import { getVehicleImagePath, telHref, whatsappHref } from "@/lib/format";
+import { getVehicleImagePath } from "@/lib/format";
 import { ButtonLink } from "./ButtonLink";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -28,7 +28,6 @@ export function ScrollHero({
     featured && featured.images[0]
       ? getVehicleImagePath(featured, featured.images[0])
       : showroomBg || site.logo;
-  const primary = site.phones[0];
 
   useGSAP(
     () => {
@@ -100,28 +99,12 @@ export function ScrollHero({
         <p className="animate-fade-up-delay-2 mt-5 max-w-lg text-base text-zinc-300 sm:text-lg">
           {site.tagline}
         </p>
-        <div className="animate-fade-up-delay-2 mt-10 flex flex-wrap gap-3">
-          <ButtonLink href="/inventory" className="!px-7 !text-[13px] !tracking-[0.12em] !uppercase">
-            View inventory
-          </ButtonLink>
+        <div className="animate-fade-up-delay-2 mt-10">
           <ButtonLink
-            href={whatsappHref(
-              primary.whatsapp,
-              "Hi Elegant Motors — I'd like to know what's available.",
-            )}
-            variant="outline"
-            external
+            href="/inventory"
             className="!px-7 !text-[13px] !tracking-[0.12em] !uppercase"
           >
-            WhatsApp
-          </ButtonLink>
-          <ButtonLink
-            href={telHref(primary.phone)}
-            variant="ghost"
-            external
-            className="!text-[13px] !tracking-[0.12em] !uppercase"
-          >
-            Call
+            View inventory
           </ButtonLink>
         </div>
         <div className="mt-16 hidden items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-zinc-500 sm:flex">
