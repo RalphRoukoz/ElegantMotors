@@ -1,6 +1,27 @@
 import Link from "next/link";
 import type { SiteConfig } from "@/lib/types";
 import { telHref, whatsappHref } from "@/lib/vehicles";
+import { ButtonLink } from "./ButtonLink";
+
+function PinIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 21s7-5.33 7-11a7 7 0 10-14 0c0 5.67 7 11 7 11z"
+      />
+      <circle cx="12" cy="10" r="2.25" />
+    </svg>
+  );
+}
 
 export function Footer({ site }: { site: SiteConfig }) {
   const primary = site.phones[0];
@@ -8,24 +29,31 @@ export function Footer({ site }: { site: SiteConfig }) {
   return (
     <footer className="border-t border-white/5 bg-ink text-zinc-400">
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-16 sm:px-6 md:flex-row md:justify-between">
-        <div>
+        <div className="max-w-md">
           <p className="text-[11px] uppercase tracking-[0.3em] text-chrome">
             {site.byline}
           </p>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-500">
+          <p className="mt-4 text-sm leading-relaxed text-zinc-500">
             {site.tagline}
           </p>
-          <p className="mt-3 text-sm">
-            <a
+
+          <div className="mt-8">
+            <p className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">
+              Find us
+            </p>
+            <p className="mt-2 text-sm text-zinc-300">{site.location}</p>
+            <ButtonLink
               href={site.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              external
+              className="mt-4 !min-h-12 !gap-2.5 !px-5 !text-[11px] !tracking-[0.16em] !uppercase"
+              aria-label={`Open ${site.location} in Google Maps`}
             >
-              {site.location}
-            </a>
-          </p>
+              <PinIcon className="h-[1.1rem] w-[1.1rem]" />
+              Open in Google Maps
+            </ButtonLink>
+          </div>
         </div>
+
         <div className="flex flex-col gap-3 text-sm">
           {site.phones.map((entry) => (
             <a

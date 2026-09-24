@@ -20,28 +20,35 @@ export default function ContactPage() {
       </h1>
       <p className="mt-5 text-lg text-chrome">{site.byline}</p>
       <p className="mt-2 text-zinc-500">{site.tagline}</p>
-      <p className="mt-3 text-zinc-400">
-        <a
-          href={site.mapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer underline-offset-4 transition-colors hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-        >
-          {site.location}
-        </a>
-      </p>
 
       <div className="mt-14 space-y-10 border-t border-white/10 pt-12">
         <div>
           <h2 className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">
             Location
           </h2>
-          <div className="mt-4">
+          <p className="mt-3 text-lg text-zinc-200">{site.location}</p>
+          <div className="mt-5">
             <ButtonLink
               href={site.mapsUrl}
               external
-              className="!text-[11px] !tracking-[0.16em] !uppercase"
+              className="!min-h-12 !gap-2.5 !px-6 !text-[11px] !tracking-[0.16em] !uppercase"
+              aria-label={`Open ${site.location} in Google Maps`}
             >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-[1.1rem] w-[1.1rem]"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 21s7-5.33 7-11a7 7 0 10-14 0c0 5.67 7 11 7 11z"
+                />
+                <circle cx="12" cy="10" r="2.25" />
+              </svg>
               Open in Google Maps
             </ButtonLink>
           </div>
