@@ -4,7 +4,13 @@ import { useMemo, useState } from "react";
 import type { Vehicle } from "@/lib/types";
 import { VehicleCard } from "./VehicleCard";
 
-export function InventoryGrid({ vehicles }: { vehicles: Vehicle[] }) {
+export function InventoryGrid({
+  vehicles,
+  featuredFirst = false,
+}: {
+  vehicles: Vehicle[];
+  featuredFirst?: boolean;
+}) {
   const [query, setQuery] = useState("");
   const [make, setMake] = useState("all");
   const [bodyType, setBodyType] = useState("all");
@@ -33,59 +39,82 @@ export function InventoryGrid({ vehicles }: { vehicles: Vehicle[] }) {
     return matchesQuery && matchesMake && matchesBody;
   });
 
+  const chipClass = (active: boolean) =>
+    `min-h-10 cursor-pointer whitespace-nowrap border px-4 text-xs uppercase tracking-[0.16em] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+      active
+        ? "border-accent bg-accent text-on-accent"
+        : "border-border bg-transparent text-zinc-400 hover:border-zinc-500 hover:text-white"
+    }`;
+
   return (
     <div>
-      <div className="mb-10 grid gap-3 sm:grid-cols-3">
-        <label className="block text-sm">
-          <span className="mb-1.5 block text-secondary">Search</span>
+      <div className="mb-8 space-y-5">
+        <label className="block">
+          <span className="sr-only">Search inventory</span>
           <input
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Make, model…"
-            className="min-h-11 w-full border border-muted bg-surface px-3 text-foreground outline-none transition focus:border-secondary focus:ring-2 focus:ring-accent/40"
+            placeholder="Search make or model…"
+            className="min-h-12 w-full border-b border-border bg-transparent px-1 text-base text-foreground outline-none transition placeholder:text-zinc-600 focus:border-accent"
           />
         </label>
-        <label className="block text-sm">
-          <span className="mb-1.5 block text-secondary">Make</span>
-          <select
-            value={make}
-            onChange={(e) => setMake(e.target.value)}
-            className="min-h-11 w-full cursor-pointer border border-muted bg-surface px-3 text-foreground outline-none focus:border-secondary focus:ring-2 focus:ring-accent/40"
+
+        <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            className={chipClass(make === "all")}
+            onClick={() => setMake("all")}
           >
-            <option value="all">All makes</option>
-            {makes.map((m) => (
-              <option key={m} value={m}>
-                {m}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="block text-sm">
-          <span className="mb-1.5 block text-secondary">Body type</span>
-          <select
-            value={bodyType}
-            onChange={(e) => setBodyType(e.target.value)}
-            className="min-h-11 w-full cursor-pointer border border-muted bg-surface px-3 text-foreground outline-none focus:border-secondary focus:ring-2 focus:ring-accent/40"
+            All makes
+          </button>
+          {makes.map((m) => (
+            <button
+              key={m}
+              type="button"
+              className={chipClass(make === m)}
+              onClick={() => setMake(m)}
+            >
+              {m}
+            </button>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            className={chipClass(bodyType === "all")}
+            onClick={() => setBodyType("all")}
           >
-            <option value="all">All types</option>
-            {bodyTypes.map((b) => (
-              <option key={b} value={b}>
-                {b}
-              </option>
-            ))}
-          </select>
-        </label>
+            All bodies
+          </button>
+          {bodyTypes.map((b) => (
+            <button
+              key={b}
+              type="button"
+              className={chipClass(bodyType === b)}
+              onClick={() => setBodyType(b)}
+            >
+              {b}
+            </button>
+          ))}
+        </div>
       </div>
 
       {filtered.length === 0 ? (
-        <p className="py-16 text-center text-secondary">
+        <p className="py-24 text-center text-zinc-500">
           No vehicles match these filters.
         </p>
       ) : (
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
           {filtered.map((vehicle, index) => (
-            <VehicleCard key={vehicle.slug} vehicle={vehicle} index={index} />
+            <VehicleCard
+              key={vehicle.slug}
+              vehicle={vehicle}
+              index={index}
+              priority={index < 2}
+              featured={featuredFirst && index === 0}
+            />
           ))}
         </div>
       )}

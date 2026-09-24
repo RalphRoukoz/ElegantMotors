@@ -32,7 +32,7 @@ export function VehicleGallery({ images }: Props) {
 
   if (images.length === 0) {
     return (
-      <div className="flex aspect-[16/10] items-center justify-center bg-muted text-secondary">
+      <div className="flex aspect-[16/10] items-center justify-center bg-muted text-zinc-500">
         No photos yet
       </div>
     );

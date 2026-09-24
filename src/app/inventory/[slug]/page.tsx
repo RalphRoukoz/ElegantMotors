@@ -62,33 +62,38 @@ export default async function VehicleDetailPage({ params }: Props) {
   const waMessage = `Hi Elegant Motors — I'm interested in the ${vehicle.title}.`;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-20 pt-28 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 pb-24 pt-28 sm:px-6">
       <Link
         href="/inventory"
-        className="mb-8 inline-block cursor-pointer text-sm text-secondary transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        className="mb-10 inline-block cursor-pointer text-[11px] uppercase tracking-[0.22em] text-zinc-500 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       >
-        ← Back to inventory
+        ← Inventory
       </Link>
 
-      <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         <VehicleGallery images={images} />
 
         <div>
-          <h1 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
+          <p className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">
+            {vehicle.make}
+          </p>
+          <h1 className="mt-3 text-4xl font-medium tracking-tight text-white sm:text-5xl">
             {vehicle.title}
           </h1>
-          <p className="mt-3 text-xl text-foreground">{formatPrice(vehicle)}</p>
+          <p className="mt-4 text-lg text-chrome">{formatPrice(vehicle)}</p>
 
-          <dl className="mt-8 grid grid-cols-2 gap-x-4 gap-y-4 border-y border-muted py-6 text-sm">
+          <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 border-y border-white/10 py-8 text-sm">
             {specs.map((spec) => (
               <div key={spec.label}>
-                <dt className="text-secondary">{spec.label}</dt>
-                <dd className="mt-1 font-medium text-foreground">{spec.value}</dd>
+                <dt className="text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+                  {spec.label}
+                </dt>
+                <dd className="mt-1.5 font-medium text-zinc-200">{spec.value}</dd>
               </div>
             ))}
           </dl>
 
-          <p className="mt-8 whitespace-pre-line text-base leading-relaxed text-secondary">
+          <p className="mt-8 whitespace-pre-line text-base leading-relaxed text-zinc-400">
             {vehicle.description}
           </p>
 
@@ -96,7 +101,7 @@ export default async function VehicleDetailPage({ params }: Props) {
             <ButtonLink
               href={whatsappHref(primary.whatsapp, waMessage)}
               external
-              className="!bg-primary !text-accent hover:!bg-secondary"
+              className="!text-[11px] !tracking-[0.16em] !uppercase"
             >
               WhatsApp about this car
             </ButtonLink>
@@ -106,7 +111,7 @@ export default async function VehicleDetailPage({ params }: Props) {
                 href={telHref(entry.phone)}
                 variant="outline"
                 external
-                className="!border-secondary !text-foreground hover:!bg-muted"
+                className="!text-[11px] !tracking-[0.12em] !uppercase"
               >
                 Call {entry.display}
               </ButtonLink>
@@ -118,9 +123,9 @@ export default async function VehicleDetailPage({ params }: Props) {
               href={vehicle.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-block cursor-pointer text-sm text-secondary underline-offset-4 hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="mt-8 inline-block cursor-pointer text-sm text-zinc-500 underline-offset-4 transition-colors hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
-              View original Instagram post
+              View Instagram post
             </a>
           ) : null}
         </div>

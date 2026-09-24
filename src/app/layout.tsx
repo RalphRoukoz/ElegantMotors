@@ -36,10 +36,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jost.variable} antialiased`}>
-        <Header site={site} />
-        <main>{children}</main>
-        <Footer site={site} />
+      <body className={`${jost.variable} bg-background text-foreground antialiased`}>
+        <div className="site-grain min-h-screen">
+          <Header site={site} />
+          <main>{children}</main>
+          <Footer site={site} />
+        </div>
       </body>
     </html>
   );
