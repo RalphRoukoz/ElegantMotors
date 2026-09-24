@@ -1,0 +1,23 @@
+{
+  "slug": "2020-land-rover-defender-110-x",
+  "title": "2020 Land Rover Defender 110 X",
+  "make": "Land Rover",
+  "model": "Defender 110 X",
+  "year": 2020,
+  "price": 60000,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "SUV",
+  "transmission": "Automatic",
+  "fuel": "Petrol",
+  "color": "Blue",
+  "status": "available",
+  "description": "2020 Defender 110 X \u2014 striking blue with bronze accents. Rugged capability with refined X-spec design. Contact for specs, mileage, and final price. Market estimate for 2020 Defender X trims.",
+  "instagramUrl": "https://www.instagram.com/p/DdHPEgeiA5x/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": false,
+  "updatedAt": "2026-09-24",
+  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+}

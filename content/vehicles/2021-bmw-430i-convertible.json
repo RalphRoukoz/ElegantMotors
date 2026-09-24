@@ -1,0 +1,23 @@
+{
+  "slug": "2021-bmw-430i-convertible",
+  "title": "2021 BMW 430i Convertible",
+  "make": "BMW",
+  "model": "430i Convertible",
+  "year": 2021,
+  "price": 45000,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "Convertible",
+  "transmission": "Automatic",
+  "fuel": "Petrol",
+  "color": "Black",
+  "status": "available",
+  "description": "2021 BMW 430i Convertible \u2014 black with Cognac leather. 2.0L TwinPower Turbo, 255 HP / 400 Nm, 8-speed auto, RWD, electric soft-top, digital cockpit & iDrive, parking sensors. Contact for mileage and final price.",
+  "instagramUrl": "https://www.instagram.com/p/Dc54FaWiBFN/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": false,
+  "updatedAt": "2026-09-24",
+  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+}

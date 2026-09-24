@@ -1,0 +1,23 @@
+{
+  "slug": "mg-cyberster",
+  "title": "MG Cyberster",
+  "make": "MG",
+  "model": "Cyberster",
+  "year": 2025,
+  "price": 50000,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "Convertible",
+  "transmission": "Automatic",
+  "fuel": "Electric",
+  "color": null,
+  "status": "available",
+  "description": "MG Cyberster electric roadster \u2014 scissor doors, dual-motor AWD up to ~503\u2013544 HP (~3.2s 0\u2013100) or single-motor RWD ~310\u2013340 HP. Contact for exact configuration and final price.",
+  "instagramUrl": "https://www.instagram.com/p/DZqECW9CLMn/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": false,
+  "updatedAt": "2026-09-24",
+  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+}

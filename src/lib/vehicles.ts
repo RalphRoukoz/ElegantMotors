@@ -20,7 +20,12 @@ export function getAllVehicles(): Vehicle[] {
       const raw = fs.readFileSync(path.join(dir, file), "utf8");
       return JSON.parse(raw) as Vehicle;
     })
-    .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+    .sort((a, b) => {
+      const priceA = a.price ?? -1;
+      const priceB = b.price ?? -1;
+      if (priceB !== priceA) return priceB - priceA;
+      return b.year - a.year || a.title.localeCompare(b.title);
+    });
 }
 
 export function getAvailableVehicles(): Vehicle[] {

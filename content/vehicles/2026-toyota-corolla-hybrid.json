@@ -1,0 +1,23 @@
+{
+  "slug": "2026-toyota-corolla-hybrid",
+  "title": "2026 Toyota Corolla Hybrid",
+  "make": "Toyota",
+  "model": "Corolla Hybrid",
+  "year": 2026,
+  "price": 24000,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "Sedan",
+  "transmission": "Automatic",
+  "fuel": "Hybrid",
+  "color": null,
+  "status": "available",
+  "description": "2026 Toyota Corolla Hybrid \u2014 1.8L hybrid, E-CVT, FWD, from ~4.45 L/100 km, full LED lighting, ADAS, modern spacious interior. Contact for final price.",
+  "instagramUrl": "https://www.instagram.com/p/DdCWIPRCFFx/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": false,
+  "updatedAt": "2026-09-24",
+  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+}

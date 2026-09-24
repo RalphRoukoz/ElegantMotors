@@ -1,0 +1,23 @@
+{
+  "slug": "deepal-g318",
+  "title": "DEEPAL G318",
+  "make": "Deepal",
+  "model": "G318",
+  "year": 2025,
+  "price": 42000,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "SUV",
+  "transmission": "Automatic",
+  "fuel": "Hybrid",
+  "color": null,
+  "status": "available",
+  "description": "DEEPAL G318 extended-range off-roader \u2014 intelligent 4WD, 35.07 kWh battery, up to 190 km pure EV / 1,448 km combined, air suspension, 360\u00b0 camera, adaptive cruise, multiple off-road modes. Contact for final price.",
+  "instagramUrl": "https://www.instagram.com/p/DcjlGnQiFKt/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": false,
+  "updatedAt": "2026-09-24",
+  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+}

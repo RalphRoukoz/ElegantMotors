@@ -1,0 +1,23 @@
+{
+  "slug": "deepal-s07",
+  "title": "DEEPAL S07",
+  "make": "Deepal",
+  "model": "S07",
+  "year": 2025,
+  "price": 35000,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "SUV",
+  "transmission": "Automatic",
+  "fuel": "Electric",
+  "color": null,
+  "status": "available",
+  "description": "DEEPAL S07 fully electric SUV \u2014 79.97 kWh battery, up to 620 km CLTC, RWD, DC fast charging, 15.6\" touchscreen, panoramic roof, 360\u00b0 camera, heated & ventilated seats, ADAS. Available in two colours. Contact for final price.",
+  "instagramUrl": "https://www.instagram.com/p/DdEkSeLiORC/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": false,
+  "updatedAt": "2026-09-24",
+  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "byd-yuan-up",
+  "title": "BYD Yuan UP",
+  "make": "BYD",
+  "model": "Yuan UP",
+  "year": 2025,
+  "price": 18000,
+  "mileage": 0,
+  "mileageUnit": "km",
+  "bodyType": "SUV",
+  "transmission": "Automatic",
+  "fuel": "Electric",
+  "color": null,
+  "status": "available",
+  "description": "Brand-new BYD Yuan UP \u2014 full options GCC specs, 0 KM. 45.12 kWh Blade battery, 177 HP, up to 401 km CLTC, DC fast charging, 17\" sport alloys, rotating touchscreen, 360\u00b0 camera, leather seats. Contact for final price.",
+  "instagramUrl": "https://www.instagram.com/p/DdUMj30CNkA/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": false,
+  "updatedAt": "2026-09-24",
+  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+}

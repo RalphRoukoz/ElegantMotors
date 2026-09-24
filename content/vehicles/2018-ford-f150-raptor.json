@@ -1,0 +1,23 @@
+{
+  "slug": "2018-ford-f150-raptor",
+  "title": "2018 Ford F-150 Raptor",
+  "make": "Ford",
+  "model": "F-150 Raptor",
+  "year": 2018,
+  "price": 55000,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "Pickup",
+  "transmission": "Automatic",
+  "fuel": "Petrol",
+  "color": null,
+  "status": "available",
+  "description": "2018 F-150 Raptor \u2014 3.5L HO twin-turbo V6 tuned to 550 HP / 510 lb-ft, 10-speed automatic, 4\u00d74, FOX Live Valve shocks, long-travel suspension, 360\u00b0 camera. Contact for mileage and final price.",
+  "instagramUrl": "https://www.instagram.com/p/DcacEgkCNUa/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": false,
+  "updatedAt": "2026-09-24",
+  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+}

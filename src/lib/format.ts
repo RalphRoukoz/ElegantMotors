@@ -11,7 +11,7 @@ export function formatMileage(vehicle: Vehicle): string | null {
 
 export function formatPrice(vehicle: Vehicle): string {
   if (vehicle.price == null) return "Ask for price";
-  return `$${vehicle.price.toLocaleString()}`;
+  return `From $${vehicle.price.toLocaleString()}`;
 }
 
 export function whatsappHref(whatsapp: string, message?: string): string {
