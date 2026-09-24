@@ -4,7 +4,7 @@
   "make": "Mercedes-Benz",
   "model": "AMG S63 Coup\u00e9",
   "year": 2015,
-  "price": 70000,
+  "price": null,
   "mileage": null,
   "mileageUnit": "km",
   "bodyType": "Coupe",
@@ -19,5 +19,5 @@
   ],
   "featured": true,
   "updatedAt": "2026-09-24",
-  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+  "sortOrder": 4
 }

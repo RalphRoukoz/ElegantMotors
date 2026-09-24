@@ -37,5 +37,6 @@ export type Vehicle = {
   images: string[];
   featured: boolean;
   updatedAt: string;
+  sortOrder?: number | null;
   priceNote?: string | null;
 };

@@ -4,7 +4,7 @@
   "make": "Mercedes-Benz",
   "model": "S 500 4MATIC Coup\u00e9",
   "year": 2015,
-  "price": 65000,
+  "price": null,
   "mileage": null,
   "mileageUnit": "km",
   "bodyType": "Coupe",
@@ -19,5 +19,5 @@
   ],
   "featured": false,
   "updatedAt": "2026-09-24",
-  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+  "sortOrder": 5
 }

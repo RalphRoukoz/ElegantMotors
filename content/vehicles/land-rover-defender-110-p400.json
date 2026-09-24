@@ -4,7 +4,7 @@
   "make": "Land Rover",
   "model": "Defender 110 P400",
   "year": 2023,
-  "price": 85000,
+  "price": null,
   "mileage": null,
   "mileageUnit": "km",
   "bodyType": "SUV",
@@ -12,12 +12,12 @@
   "fuel": "Petrol Hybrid",
   "color": null,
   "status": "available",
-  "description": "Defender 110 P400 \u2014 3.0L turbo inline-six with 48V mild hybrid, 400 PS / 550 Nm, 8-speed automatic, AWD with low-range. Market comps in Lebanon/Dubai for 2023 Defender P400 often land around \\,000\u2013\\,000. Contact for mileage and final price.",
+  "description": "Defender 110 P400 \u2014 3.0L turbo inline-six with 48V mild hybrid, 400 PS / 550 Nm, 8-speed automatic, AWD with low-range. Contact for mileage and final price.",
   "instagramUrl": "https://www.instagram.com/p/DdPJYwIiF_9/",
   "images": [
     "01.jpg"
   ],
   "featured": true,
   "updatedAt": "2026-09-24",
-  "priceNote": "Estimated market value from public web comps \u2014 contact Elegant Motors for the asking price."
+  "sortOrder": 2
 }

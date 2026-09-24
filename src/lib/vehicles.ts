@@ -21,9 +21,9 @@ export function getAllVehicles(): Vehicle[] {
       return JSON.parse(raw) as Vehicle;
     })
     .sort((a, b) => {
-      const priceA = a.price ?? -1;
-      const priceB = b.price ?? -1;
-      if (priceB !== priceA) return priceB - priceA;
+      const orderA = a.sortOrder ?? 9999;
+      const orderB = b.sortOrder ?? 9999;
+      if (orderA !== orderB) return orderA - orderB;
       return b.year - a.year || a.title.localeCompare(b.title);
     });
 }

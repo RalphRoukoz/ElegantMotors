@@ -78,9 +78,6 @@ export default async function VehicleDetailPage({ params }: Props) {
             {vehicle.title}
           </h1>
           <p className="mt-3 text-xl text-foreground">{formatPrice(vehicle)}</p>
-          {vehicle.priceNote ? (
-            <p className="mt-1 text-sm text-secondary">{vehicle.priceNote}</p>
-          ) : null}
 
           <dl className="mt-8 grid grid-cols-2 gap-x-4 gap-y-4 border-y border-muted py-6 text-sm">
             {specs.map((spec) => (
