@@ -17,9 +17,32 @@ export default function ContactPage() {
       </h1>
       <p className="mt-4 text-lg text-foreground">{site.byline}</p>
       <p className="mt-2 text-lg text-secondary">{site.tagline}</p>
-      <p className="mt-2 text-secondary">{site.location}</p>
+      <p className="mt-2 text-secondary">
+        <a
+          href={site.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer underline-offset-4 transition-colors hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          {site.location}
+        </a>
+      </p>
 
       <div className="mt-12 space-y-6 border-t border-muted pt-10">
+        <div>
+          <h2 className="text-sm uppercase tracking-[0.15em] text-secondary">
+            Location
+          </h2>
+          <div className="mt-3">
+            <ButtonLink
+              href={site.mapsUrl}
+              external
+              className="!bg-primary !text-accent hover:!bg-secondary"
+            >
+              Open in Google Maps
+            </ButtonLink>
+          </div>
+        </div>
         <div>
           <h2 className="text-sm uppercase tracking-[0.15em] text-secondary">
             Phone

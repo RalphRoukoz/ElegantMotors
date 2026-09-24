@@ -13,7 +13,16 @@ export function Footer({ site }: { site: SiteConfig }) {
             {site.byline}
           </p>
           <p className="mt-3 max-w-sm text-sm text-accent/80">{site.tagline}</p>
-          <p className="mt-2 text-sm text-accent/60">{site.location}</p>
+          <p className="mt-2 text-sm text-accent/60">
+            <a
+              href={site.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer underline-offset-4 transition-colors hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              {site.location}
+            </a>
+          </p>
         </div>
         <div className="flex flex-col gap-3 text-sm">
           {site.phones.map((entry) => (

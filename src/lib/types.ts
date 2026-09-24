@@ -12,6 +12,7 @@ export type SiteConfig = {
   instagramHandle: string;
   phones: SitePhone[];
   location: string;
+  mapsUrl: string;
   logo: string;
 };
 
