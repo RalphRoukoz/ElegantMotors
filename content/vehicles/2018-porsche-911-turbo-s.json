@@ -1,0 +1,23 @@
+{
+  "slug": "2018-porsche-911-turbo-s",
+  "title": "2018 Porsche 911 Turbo S",
+  "make": "Porsche",
+  "model": "911 Turbo S",
+  "year": 2018,
+  "price": null,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "Coupe",
+  "transmission": "Automatic",
+  "fuel": "Petrol",
+  "color": null,
+  "status": "available",
+  "description": "2018 Porsche 911 Turbo S \u2014 3.8L twin-turbo flat-six, 580 HP / 750 Nm, 7-speed PDK, AWD, ~3.0s 0\u2013100, top speed 330 km/h, rear-axle steering, Porsche Ceramic Composite Brakes, Sport Chrono, active aerodynamics, 20-inch center-lock wheels. Contact for details and price.",
+  "instagramUrl": "https://www.instagram.com/p/Db7eGiqiFd_/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": true,
+  "updatedAt": "2026-09-24",
+  "sortOrder": 2
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "mercedes-amg-gt-63",
+  "title": "Mercedes-AMG GT 63",
+  "make": "Mercedes-Benz",
+  "model": "AMG GT 63",
+  "year": 2020,
+  "price": null,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "Coupe",
+  "transmission": "Automatic",
+  "fuel": "Petrol",
+  "color": null,
+  "status": "available",
+  "description": "Mercedes-AMG GT 63 \u2014 company source, one owner. Hand-crafted 4.0L V8 biturbo, 630 HP, AMG Performance Exhaust, carbon fiber interior & steering wheel, bucket seats, AMG Dynamic Select, ~3.2s 0\u2013100. Contact for year confirmation, mileage, and price.",
+  "instagramUrl": "https://www.instagram.com/p/DUGsyPkCDrb/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": true,
+  "updatedAt": "2026-09-24",
+  "sortOrder": 3
+}

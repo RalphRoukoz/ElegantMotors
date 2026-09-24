@@ -1,0 +1,23 @@
+{
+  "slug": "2020-mercedes-g63-amg",
+  "title": "2020 Mercedes-Benz G63 AMG",
+  "make": "Mercedes-Benz",
+  "model": "G63 AMG",
+  "year": 2020,
+  "price": null,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "SUV",
+  "transmission": "Automatic",
+  "fuel": "Petrol",
+  "color": "Black",
+  "status": "available",
+  "description": "2020 Mercedes-Benz G63 AMG \u2014 4.0L V8 biturbo, 577 HP / 850 Nm, 0\u2013100 in 4.4 sec, AMG Performance + 4MATIC AWD. Black exterior with red accents. Contact for mileage and price.",
+  "instagramUrl": "https://www.instagram.com/p/DWN4s43CH9m/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": true,
+  "updatedAt": "2026-09-24",
+  "sortOrder": 4
+}

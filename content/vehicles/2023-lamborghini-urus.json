@@ -1,0 +1,23 @@
+{
+  "slug": "2023-lamborghini-urus",
+  "title": "2023 Lamborghini Urus",
+  "make": "Lamborghini",
+  "model": "Urus",
+  "year": 2023,
+  "price": null,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "SUV",
+  "transmission": "Automatic",
+  "fuel": "Petrol",
+  "color": null,
+  "status": "available",
+  "description": "2023 Lamborghini Urus \u2014 4.0L twin-turbo V8, 650 HP, 0\u2013100 km/h in 3.6 sec, AWD, adaptive air suspension, sport exhaust. Black & yellow leather with hexagonal stitching, panoramic roof, driver-focused cockpit. Contact Elegant Motors for availability and price.",
+  "instagramUrl": "https://www.instagram.com/p/DWFDNUuCCJL/",
+  "images": [
+    "01.jpg"
+  ],
+  "featured": true,
+  "updatedAt": "2026-09-24",
+  "sortOrder": 1
+}
