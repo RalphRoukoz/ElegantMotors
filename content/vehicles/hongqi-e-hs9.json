@@ -1,0 +1,31 @@
+{
+  "slug": "hongqi-e-hs9",
+  "title": "Hongqi E-HS9",
+  "make": "Hongqi",
+  "model": "E-HS9",
+  "year": 2024,
+  "price": null,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "SUV",
+  "transmission": "Automatic",
+  "fuel": "Electric",
+  "color": null,
+  "status": "available",
+  "description": "Hongqi E-HS9 \u2014 a full-size electric SUV with unmistakable presence. Dual-motor AWD, four-screen digital cockpit, panoramic roof, heated front and second-row seats, multiple drive modes, 5.2 m body with 3.11 m wheelbase. Contact for final price.",
+  "instagramUrl": "https://www.instagram.com/p/Dd0fgiPCHTv/",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg",
+    "08.jpg",
+    "09.jpg"
+  ],
+  "featured": false,
+  "updatedAt": "2026-10-01",
+  "sortOrder": 16
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "2017-range-rover-sport-autobiography",
+  "title": "2017 Range Rover Sport Autobiography",
+  "make": "Land Rover",
+  "model": "Range Rover Sport Autobiography",
+  "year": 2017,
+  "price": null,
+  "mileage": null,
+  "mileageUnit": "km",
+  "bodyType": "SUV",
+  "transmission": "Automatic",
+  "fuel": "Petrol",
+  "color": "White",
+  "status": "available",
+  "description": "Range Rover Sport Autobiography Supercharged V8 \u2014 white exterior with contrasting black roof, black grille and mirror caps, multi-spoke alloys, tinted rear windows, dual exhaust. Luxury with a sporting edge. Contact for final price.",
+  "instagramUrl": "https://www.instagram.com/p/Dd1mWi-iBfP/",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg"
+  ],
+  "featured": false,
+  "updatedAt": "2026-10-01",
+  "sortOrder": 9
+}
